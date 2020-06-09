@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chatbot Prototype Demo!</title>
+
+	<!-- this is for mobile screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.png">
+
+	<!-- this is for our css files - we have to link our html file to the css files -->
+	<link rel="stylesheet" media="all" href="../component/styles/setup.css">
+	<link rel="stylesheet" media="all" href="../component/styles/says.css">
+	<link rel="stylesheet" media="all" href="../component/styles/reply.css">
+	<link rel="stylesheet" media="all" href="../component/styles/typing.css">
+  <link rel="stylesheet" media="all" href="../component/styles/input.css">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- css stylesheet for the background of the web page (no need to worry about this) -->
+	<style>
+	body {
+		background: #E6E6E6;
+	}
+	.bubble-container {
+		height: 100vh;
+	}
+	.bubble-container .input-wrap textarea {
+    margin: 0;
+	}
+	</style>
+</head>
+<body>
+
+<!-- header for the chatbot  -->
+<div id="chat">
+  <div class="header">
+    <img src="img/image.jpg" width="40px;">
+    <div>
+      <h1>Feminist Empowerment Chatbot</h1>
+      <p>Bulding up some self esteem</p>
+    </div>
+  </div>
+</div>
+
+<!-- This is to power the chatbot, you do not need to worry about this area -->
+<script src="../component/js/Bubbles.js"></script>
+<script>
+var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
+  inputCallbackFn: function(o) {
+
+    // this is for the bot - don't worry
+    var match = function(key) {
+      setTimeout(function() {
+        chatWindow.talk(convo, key) // restart current convo from point found in the answer
+      }, 600)
+    }
+
+    // sanitize text for search function - for the bot
+    var strip = function(text) {
+      return text.toLowerCase().replace(/[\s.,\/#!$%\^&\*;:{}=\-_'"`~()]/g, "")
+    }
+
+    // search function -  for the bot
+    var found = false
+    o.convo[o.standingAnswer].reply.forEach(function(e, i) {
+      strip(e.human_response).includes(strip(o.input)) && o.input.length > 0
+        ? (found = e.bot_answer)
+        : found ? null : (found = false)
+    })
+    found ? match(found) : miss()
+  }
+}) // section for setting up bot is finished.
+
+
+// This is where your conversation is going to happen! Only focus here!
+var convo = {
+
+  // first section
+  intro: {
+    bot_says: ["Hey, Feminist Empowerment Chatbot here! FEC is here to give you the daily boost of empowerment that you seek.",
+               "<img src=https://media.giphy.com/media/3o7abBphHJngINCHio/giphy.gif />"],
+    human_reply: [
+      {
+        human_response: "Cool, but why Feminist Empowerment?",
+        bot_answer: "smart",
+      },
+      ]
+  },
+
+  //second section
+
+      "smart": {
+    bot_says: ["Good question, you're smart! Feminism can be a tool for exploring all kinds of inequalities, including the ways that women or other gender minorities might be discriminated against.",
+               "Being in it together and empower one another can help you see that you're not alone.",
+               "Lifting each other higher through sharing experiences (good ones or bad ones) can be empowering."
+               "Ever heard of 'mansplaining'?"],
+    human_reply: [
+    {
+        human_response: "Yes, I have heard of that",
+        bot_answer: "explore"
+      },
+      {
+        human_response: "Nope, tell me more",
+        bot_answer: "mansplaining"
+
+      },
+    ]
+  },
+  //third section (option explore)
+
+      "explore": {
+    bot_says: ["<img src=https://media.giphy.com/media/l0IyooXaONzJ6Uczm/giphy.gif />",
+      "Alright then you probably also know that xx% of women of persons who identify as female have experienced this phenomena? Especially when we look at field that are proclaimed to be 'male' per definitionem."],
+    human_reply: [
+    {
+        human_response: "Yeah, I can imagine that. I've already experienced it myself",
+        bot_answer: "myself"
+      },
+      {
+        human_response: "Luckily, I haven't had such an experience",
+        bot_answer: "luck"
+
+      },
+    ]
+  },
+  //third section (option mansplaining)
+
+      "mansplaining": {
+    bot_says: ["So, mensplaining is the explanation of something by a man, typically to a woman, in a manner regarded as condescending or patronizing.",
+               "<img src=https://media.giphy.com/media/l0IyooXaONzJ6Uczm/giphy.gif />"],
+    human_reply: [
+    {
+        human_response: "Meeh, that's aweful. But what can you do about it?",
+        bot_answer: "strengths"
+      },
+    ]
+  },
+  //make sure you always keep this as this closes line 76!!!!!!
+}
+ //make sure you always keep this as this closes line 76!!!!!!
+
+//Do not worry about this!
+chatWindow.talk(convo)
+</script>
+</body>

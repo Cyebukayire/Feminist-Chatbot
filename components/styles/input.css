@@ -1,0 +1,60 @@
+/* style user input field */
+
+@font-face {
+	font-family: 'cooperhewitt';
+	src: url('../fonts/CooperHewitt-Semibold.eot');
+	src: url('../fonts/CooperHewitt-Semibold.woff') format('woff'),
+	url('../fonts/CooperHewitt-Semibold.otf') format('opentype'),
+	url('../fonts/CooperHewitt-Semibold.svg#cooperhewitt') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'cooperhewitt';
+	src: url('../fonts/CooperHewitt-Medium.eot');
+	src: url('../fonts/CooperHewitt-Medium.woff') format('woff'),
+	url('../fonts/CooperHewitt-Medium.otf') format('opentype'),
+	url('../fonts/CooperHewitt-Medium.svg#cooperhewitt') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+.bubble-container .input-wrap {
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+	font-family: "cooperhewitt", sans-serif;
+	color: #2c2c2c;
+}
+.bubble-container .input-wrap textarea {
+	width: calc(100% - 20px);
+	font-family: "cooperhewitt", Helvetica, sans-serif;
+	color: #2c2c2c;
+	background: #F0F0F095;
+	font-size: 1em;
+	letter-spacing: .5px;
+	font-weight: 400;
+	margin: 10px;
+	border-radius: 0;
+	border: none;
+	padding: 10px 15px;
+	outline: none;
+	line-height: 1.25em;
+	visibility: hidden !important;
+}
+.bubble.reply-freeform {
+	margin: 0;
+}
+.bubble.reply.reply-freeform.say .bubble-content .bubble-button {
+	margin-top: 1px;
+	text-align: left;
+}
+.bubble.reply.say.bubble-hidden {
+	margin: 0;
+	transform: scale(0);
+	height: 0;
+}
