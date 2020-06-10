@@ -1,5 +1,5 @@
-** Feminist Chatbot **
+**Feminist Chatbot**
 
-*Here we go*
+Here we go:
 
-* First things first: [conversational design template](https://whimsical.com/9g5xd8AjJjEDPeMPreTWBg) 
+* First things first: [conversational design template](https://whimsical.com/9g5xd8AjJjEDPeMPreTWBg)
