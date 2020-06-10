@@ -1,0 +1,89 @@
+/* setup container styles */
+
+.bubble-container {
+	background: #E6E6E6;
+	height: 520px;
+	max-width: 750px;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.bubble-wrap {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: -17px;
+	padding: 10px calc(17px + 10px) 30px 10px;
+	padding-top: 20%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transform: translate3d(0, 0, 0);
+}
+/* optional page styles */
+h1 {
+	text-align: center;
+	font-weight: 300;
+	font-size: 4.3em;
+	margin: .5em auto 0.15em;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+
+}
+.header {
+	position: relative;
+	top: 0;
+	z-index: 100;
+	background: #F2F2F2;
+	padding: 2%;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.1);
+}
+
+.header img {
+	border-radius: 100px;
+	margin-top: 3px;
+	display: inline-block;
+}
+
+.about {
+	float: right;
+	margin-top: 12px;
+	margin-right: 20px;
+	color: black;
+	background-color: white;
+	font-size: 20px;
+ 	font-family: 'Work Sans', sans-serif;
+	font-style: italic;
+	font-weight: 400;
+	height: 30px;
+	width: 30px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	border-radius: 50%;
+	cursor: help;
+}
+
+.header div {
+	display: inline-block;
+	margin-left: .4rem;
+}
+
+.header div h1 {
+	font-size: 1.2rem;
+	text-align: left;
+	margin: 0px;
+	font-weight: 600;
+}
+
+.header div p {
+	font-size: 1rem;
+	text-align: left;
+	margin: 0px;
+	color: #212121;
+	font-weight: 500;
+}
