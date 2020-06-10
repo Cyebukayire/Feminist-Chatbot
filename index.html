@@ -2,20 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Chatbot Prototype Demo!</title>
+	<title>Feminist Empowerment Chatbot!</title>
 
-	<!-- this is for mobile screens -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon.png">
+  <link rel="shortcut icon" href="img/apple-touch-icon.png">
 
-	<!-- this is for our css files - we have to link our html file to the css files -->
-	<link rel="stylesheet" media="all" href="../component/styles/setup.css">
-	<link rel="stylesheet" media="all" href="../component/styles/says.css">
-	<link rel="stylesheet" media="all" href="../component/styles/reply.css">
-	<link rel="stylesheet" media="all" href="../component/styles/typing.css">
-  <link rel="stylesheet" media="all" href="../component/styles/input.css">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700&display=swap" rel="stylesheet">
-
+	<link rel="stylesheet" media="all" href="component/styles/setup.css" type="text/css">
+	<link rel="stylesheet" media="all" href="component/styles/says.css" type="text/css">
+	<link rel="stylesheet" media="all" href="component/styles/reply.css" type="text/css">
+	<link rel="stylesheet" media="all" href="component/styles/typing.css" type="text/css">
+  <link rel="stylesheet" media="all" href="component/styles/input.css" type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- css stylesheet for the background of the web page (no need to worry about this) -->
 	<style>
 	body {
@@ -34,7 +31,7 @@
 <!-- header for the chatbot  -->
 <div id="chat">
   <div class="header">
-    <img src="img/image.jpg" width="40px;">
+    <img src="img/apple-touch-icon.png" width="40px;">
     <div>
       <h1>Feminist Empowerment Chatbot</h1>
       <p>Bulding up some self esteem</p>
@@ -43,7 +40,7 @@
 </div>
 
 <!-- This is to power the chatbot, you do not need to worry about this area -->
-<script src="../component/js/Bubbles.js"></script>
+<script src="component/js/Bubbles.js"></script>
 <script>
 var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
   inputCallbackFn: function(o) {
@@ -69,7 +66,7 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
     })
     found ? match(found) : miss()
   }
-}) // section for setting up bot is finished.
+})
 
 
 // This is where your conversation is going to happen! Only focus here!
@@ -92,15 +89,15 @@ var convo = {
       "smart": {
     bot_says: ["Good question, you're smart! Feminism can be a tool for exploring all kinds of inequalities, including the ways that women or other gender minorities might be discriminated against.",
                "Being in it together and empower one another can help you see that you're not alone.",
-               "Lifting each other higher through sharing experiences (good ones or bad ones) can be empowering."
+               "Lifting each other higher through sharing experiences (good ones or bad ones) can be empowering.",
                "Ever heard of 'mansplaining'?"],
     human_reply: [
     {
-        human_response: "Yes, I have heard of that",
+        human_response: "Yes, I have heard of that.",
         bot_answer: "explore"
       },
       {
-        human_response: "Nope, tell me more",
+        human_response: "Nope, tell me more!",
         bot_answer: "mansplaining"
 
       },
@@ -110,14 +107,15 @@ var convo = {
 
       "explore": {
     bot_says: ["<img src=https://media.giphy.com/media/l0IyooXaONzJ6Uczm/giphy.gif />",
-      "Alright then you probably also know that xx% of women of persons who identify as female have experienced this phenomena? Especially when we look at field that are proclaimed to be 'male' per definitionem."],
+      "Alright then you probably also know that xx% of women of persons who identify as female have experienced this phenomena? ",
+			"Especially when we look at field that are proclaimed to be 'male' per definitionem."],
     human_reply: [
     {
-        human_response: "Yeah, I can imagine that. I've already experienced it myself",
+        human_response: "Yeah, I can imagine that. I've already experienced it myself.",
         bot_answer: "myself"
       },
       {
-        human_response: "Luckily, I haven't had such an experience",
+        human_response: "Luckily, I haven't had such an experience.",
         bot_answer: "luck"
 
       },
