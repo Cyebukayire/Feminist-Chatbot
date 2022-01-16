@@ -1,4 +1,5 @@
 # Feminist-Chatbot
-chatbots can easily reinforce harmful gender stereotypes or promote discriminatory behaviour if their designers aren't careful.
-Whatif there is a way to make a little step against this?
-I just want to pray my role to make technolog better.
+> Chatbots can easily reinforce harmful gender stereotypes or promote discriminatory behaviour if their designers aren't careful.
+What if there is a way to prevent this?
+
+## I just want to improve modern technology, with who I am and what good I do!
